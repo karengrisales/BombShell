@@ -26,6 +26,7 @@ var cursors;
 var score = 0;
 var gameOver = false;
 var scoreText;
+var gameOverText;
 
 var game = new Phaser.Game(config);
 
@@ -103,7 +104,7 @@ function create ()
     bombs = this.physics.add.group();
 
     //  The score
-    scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = this.add.text(16, 16, 'Puntuación: 0', { fontSize: '32px', fill: '#fff'});
 
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
@@ -185,6 +186,10 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
 
     gameOver = true;
+
+    if(gameOver == true){
+        gameOverText = this.add.text(200, 300, 'FIN DEL JUEGO', { fontSize: '50px', fill: '#000'});
+    }
 }
 
 

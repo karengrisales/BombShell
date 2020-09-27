@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 
+
 const http = require('http');
 const server = http.createServer(app);
 
@@ -14,4 +15,5 @@ const io = socketIo.listen(server);
 
 io.on('connect', function (socket) {
     console.log('nueva conexion id:' + socket.id);
+
 });
