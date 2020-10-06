@@ -155,7 +155,7 @@ function collectStar (player, star)
 
     //  Add and update the score
     score += 10;
-    scoreText.setText('Score: ' + score);
+    scoreText.setText('Puntuación: ' + score);
 
     if (stars.countActive(true) === 0)
     {
